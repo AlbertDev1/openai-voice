@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GPT TTS Voice</title>
+    </head>
+    <body>
+        <h1>GPT TTS Voice</h1>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% else %}
+            <p>Click the button and start speaking!</p>
+        {% endif %}
+        <form method="POST">
+            <button type="submit">Start</button>
+            <textarea name="transcript" rows="10" cols="30">{% if transcript %}{{ transcript }}{% endif %}</textarea>
+        </form>
+        {% if audio_base64 %}
+            <audio controls autoplay>
+                <source src="data:audio/mp3;base64,{{ audio_base64 }}" type="audio/mp3">
+            </audio>
+        {% endif %}
+        <script type="text/javascript">
+            var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            var recognition = new SpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+            recognition.onresult = function(event) {
+                var transcript = event.results[0][0].transcript;
+                document.getElementsByName('transcript')[0].value = transcript;
+            };
+            document.querySelector('button').addEventListener('click', function() {
+                recognition.start();
+            });
+        </script>
+    </body>
+</html>

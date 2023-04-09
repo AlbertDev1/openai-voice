@@ -1,0 +1,25 @@
+# Ignore build artifacts
+build/
+dist/
+*.pyc
+
+# Ignore virtual environment directories
+venv/
+env/
+.venv/
+
+# Ignore operating system and IDE files
+.DS_Store
+Thumbs.db
+.idea/
+
+# Ignore log files
+*.log
+logs/
+
+# Ignore configuration files that contain secrets
+config.json
+secrets.ini
+*.env
+*.key
+*.pem
