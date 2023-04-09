@@ -1,4 +1,4 @@
-#Getting Started
+Getting Started
 
 This repository contains a script setup.sh that automates the installation of dependencies and required packages for a Python project. Follow the steps below to get started:
 
