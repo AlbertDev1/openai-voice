@@ -16,9 +16,9 @@ Change the permissions of setup.sh to make it executable:
   
 
   
-
+```bash
 sudo chmod +x setup.sh
-
+```
   
 
   
@@ -28,9 +28,9 @@ Run the setup.sh script to install the dependencies:
   
 
   
-
+```bash
 ./setup.sh
-
+```
   
 
   
@@ -56,26 +56,19 @@ The setup.sh script has been tested and verified to work on the following operat
 - macOS
   
 
-**
+
 
 ## License
-
-**
-
 
 This repository is licensed under the MIT License. Feel free to use it for your own projects!
 
   
-
 René Vélez
-
 Distributed under the MIT License. See LICENSE for more information.
 
-**
+
 
 ## Contact
-
-**
 
  
 Rene Velez - classicalbert@gmail.com
