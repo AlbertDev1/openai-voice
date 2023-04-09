@@ -3,7 +3,14 @@
 # Check OS and provide installation instructions
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo "Linux detected. Please run the following commands to install dependencies:"
-    echo "sudo apt-get update && sudo apt-get install portaudio19-dev espeak python3-pip"
+    sudo apt-get update && sudo apt-get install portaudio19-dev espeak python3-pip python3-venv
+    echo "Creating virtual environment for Linux..."
+    python3.8 -m venv env
+    source env/bin/activate
+    echo "Installing Python dependencies from requirements.txt..."
+    pip install --upgrade pip
+    pip install -r requirements.txt
+    echo "All Done ;-)"
     exit 1
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo "macOS detected. Checking for Homebrew..."
