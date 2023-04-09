@@ -4,7 +4,7 @@ import os
 
 load_dotenv()  # Load environment variables from the .env file
 
-class GPT_API:
+class OpenAI:
     def __init__(self, api_key=None):
         if api_key is None:
             api_key = os.environ["OPENAI_API_KEY"] 

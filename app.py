@@ -1,7 +1,7 @@
 import logging
 from speech import speech_to_text, speak_text
 from flask import Flask, render_template
-from GPT import GPT_API
+from openai import OpenAI
 import asyncio
 
 
@@ -17,7 +17,7 @@ def index():
 @app.route("/", methods=["POST"])
 def transcribe():
     try:
-        gpt = GPT_API()
+        gpt = OpenAI()
         loop = asyncio.new_event_loop()
 
         async def transcribe_task():
