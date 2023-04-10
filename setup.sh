@@ -34,22 +34,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     pip install -r requirements.txt
     echo "All Done ;-)"
     exit 0
-elif [[ "$OSTYPE" == "win32" ]]; then
-    echo "Windows detected. Checking for Chocolatey..."
-    if ! command -v choco >/dev/null 2>&1; then
-        echo "Chocolatey not found. Installing Chocolatey..."
-        Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
-    fi
-    echo "Installing dependencies via Chocolatey..."
-    choco install -y portaudio espeak python
-    echo "Creating virtual environment for Windows..."
-    python3.8 -m venv env
-    env\Scripts\activate.bat
-    echo "Installing Python dependencies from requirements.txt..."
-    pip install --upgrade pip
-    pip install -r requirements.txt
-    echo "All Done ;-)"
-    exit 0
 else
     echo "Unsupported OS detected. Please install the dependencies manually:"
     echo "portaudio: http://www.portaudio.com/download.html"

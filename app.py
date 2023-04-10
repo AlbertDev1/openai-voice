@@ -1,7 +1,7 @@
 import logging
 from speech import speech_to_text, speak_text
 from flask import Flask, render_template
-from openai import OpenAI
+from openai_api import OpenAI
 import asyncio
 
 
